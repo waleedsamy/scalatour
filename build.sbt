@@ -7,5 +7,10 @@ lazy val root = (project in file("."))
     scalacOptions ++= Seq(
       "-feature",
       "-language:postfixOps"
-    )
+    ),
+    libraryDependencies ++=Seq(
+      "org.scalaz" %% "scalaz-core" % "7.2.11"
+    ),
+    mainClass in (Compile, run) := Some("io.github.waleedsamy.scalatour.SelfReferences"),
+    mainClass in (Compile, packageBin) := Some("io.github.waleedsamy.scalatour.SelfReferences")
 )
